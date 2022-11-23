@@ -1,6 +1,13 @@
-﻿namespace GiPlus.API.Management.Domain.Services;
+﻿using GiPlus.API.Management.Domain.Models;
+using GiPlus.API.Management.Domain.Services.Communication;
 
-public class IEmployeeService
+namespace GiPlus.API.Management.Domain.Services;
+
+public interface IEmployeeService
 {
-    
+    Task<IEnumerable<Employee>> ListAsync();
+    Task<IEnumerable<Employee>> ListByUserIdAsync();
+    Task<EmployeeResponse> SaveAsync(Employee employee);
+    Task<EmployeeResponse> UpdateAsync(int employeeId, Employee employee);
+    Task<EmployeeResponse> DeleteAsync(int employeeId);
 }

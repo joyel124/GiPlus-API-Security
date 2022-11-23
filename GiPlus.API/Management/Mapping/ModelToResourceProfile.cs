@@ -1,6 +1,15 @@
-﻿namespace GiPlus.API.Management.Mapping;
+﻿using AutoMapper;
+using GiPlus.API.Management.Domain.Models;
+using GiPlus.API.Management.Resources;
 
-public class ModelToResourceProfile
+namespace GiPlus.API.Management.Mapping;
+
+public class ModelToResourceProfile : Profile
 {
-    
+    public ModelToResourceProfile()
+    {
+        CreateMap<Client, ClientResource>();
+        CreateMap<Employee, EmployeeResource>();
+        CreateMap<Supplier, SupplierResource>();
+    }
 }
