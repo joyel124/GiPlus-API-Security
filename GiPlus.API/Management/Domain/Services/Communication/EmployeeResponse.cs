@@ -5,11 +5,11 @@ namespace GiPlus.API.Management.Domain.Services.Communication;
 
 public class EmployeeResponse : BaseResponse<Employee>
 {
-    protected EmployeeResponse(string message) : base(message)
+    public EmployeeResponse(string message) : base(message)
     {
     }
 
-    protected EmployeeResponse(Employee resource) : base(resource)
+    public EmployeeResponse(Employee resource) : base(resource)
     {
     }
 }

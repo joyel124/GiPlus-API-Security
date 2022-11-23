@@ -6,7 +6,7 @@ namespace GiPlus.API.Management.Domain.Services;
 public interface IClientService
 {
     Task<IEnumerable<Client>> ListAsync();
-    Task<IEnumerable<Client>> ListByUserIdAsync();
+    Task<IEnumerable<Client>> ListByUserIdAsync(int userId);
     Task<ClientResponse> SaveAsync(Client client);
     Task<ClientResponse> UpdateAsync(int clientId, Client client);
     Task<ClientResponse> DeleteAsync(int clientId);

@@ -5,11 +5,11 @@ namespace GiPlus.API.Management.Domain.Services.Communication;
 
 public class SupplierResponse : BaseResponse<Supplier>
 {
-    protected SupplierResponse(string message) : base(message)
+    public SupplierResponse(string message) : base(message)
     {
     }
 
-    protected SupplierResponse(Supplier resource) : base(resource)
+    public SupplierResponse(Supplier resource) : base(resource)
     {
     }
 }

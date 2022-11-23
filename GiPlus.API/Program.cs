@@ -1,3 +1,11 @@
+using GiPlus.API.Management.Domain.Repositories;
+using GiPlus.API.Management.Domain.Services;
+using GiPlus.API.Management.Persistence.Repositories;
+using GiPlus.API.Management.Services;
+using GiPlus.API.Sales.Domain.Repositories;
+using GiPlus.API.Sales.Domain.Services;
+using GiPlus.API.Sales.Persistence.Repositories;
+using GiPlus.API.Sales.Services;
 using GiPlus.API.Security.Authorization.Handlers.Implementations;
 using GiPlus.API.Security.Authorization.Handlers.Interfaces;
 using GiPlus.API.Security.Authorization.Middleware;
@@ -89,13 +97,37 @@ builder.Services.AddScoped<IJwtHandler, JwtHandler>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+// Sales Injection Configuration
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<IRequestRepository, RequestRepository>();
+builder.Services.AddScoped<IRequestService, RequestService>();
+
+builder.Services.AddScoped<IRequestRepository, RequestRepository>();
+builder.Services.AddScoped<IRequestService, RequestService>();
+
+// Management Injection Configuration
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IClientService, ClientService>();
+
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+
 // Shared Injection Configuration
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // AutoMapper Configuration
 builder.Services.AddAutoMapper(
-    typeof(ModelToResourceProfile),
-    typeof(ResourceToModelProfile));
+    typeof(GiPlus.API.Management.Mapping.ModelToResourceProfile),
+    typeof(GiPlus.API.Management.Mapping.ResourceToModelProfile),
+    typeof(GiPlus.API.Sales.Mapping.ModelToResourceProfile),
+    typeof(GiPlus.API.Sales.Mapping.ResourceToModelProfile),
+    typeof(GiPlus.API.Security.Mapping.ModelToResourceProfile),
+    typeof(GiPlus.API.Security.Mapping.ResourceToModelProfile));
 
 var app = builder.Build();
 

@@ -6,7 +6,7 @@ namespace GiPlus.API.Management.Domain.Services;
 public interface ISupplierService
 {
     Task<IEnumerable<Supplier>> ListAsync();
-    Task<IEnumerable<Supplier>> ListByUserIdAsync();
+    Task<IEnumerable<Supplier>> ListByUserIdAsync(int userId);
     Task<SupplierResponse> SaveAsync(Supplier supplier);
     Task<SupplierResponse> UpdateAsync(int supplierId, Supplier supplier);
     Task<SupplierResponse> DeleteAsync(int supplierId);

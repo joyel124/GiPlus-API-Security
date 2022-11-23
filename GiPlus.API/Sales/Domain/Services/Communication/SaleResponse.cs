@@ -5,11 +5,11 @@ namespace GiPlus.API.Sales.Domain.Services.Communication;
 
 public class SaleResponse : BaseResponse<Sale>
 {
-    protected SaleResponse(string message) : base(message)
+    public SaleResponse(string message) : base(message)
     {
     }
 
-    protected SaleResponse(Sale resource) : base(resource)
+    public SaleResponse(Sale resource) : base(resource)
     {
     }
 }
