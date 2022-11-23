@@ -23,4 +23,18 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.3.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.19.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Management\Domain\Repositories" />
+    <Folder Include="Management\Domain\Services" />
+    <Folder Include="Management\Mapping" />
+    <Folder Include="Management\Persistence\Repositories" />
+    <Folder Include="Management\Resources" />
+    <Folder Include="Management\Services" />
+    <Folder Include="Sales\Controllers" />
+    <Folder Include="Sales\Domain" />
+    <Folder Include="Sales\Mapping" />
+    <Folder Include="Sales\Persistence\Repositories" />
+    <Folder Include="Sales\Resources" />
+    <Folder Include="Sales\Services" />
+  </ItemGroup>
 </Project>

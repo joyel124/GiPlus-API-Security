@@ -37,7 +37,7 @@ public class UserService : IUserService
         if (user == null || !BCryptNet.Verify(request.Password, user.PasswordHash))
         {
             Console.WriteLine("Authentication Error");
-            throw new AppException("Email of password is incorrect");
+            throw new AppException("Email or password is incorrect");
         }
         
         Console.WriteLine("Authentication successful. About to generate token");

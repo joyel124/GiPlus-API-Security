@@ -53,7 +53,7 @@ public class UsersController : ControllerBase
 
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<UserResource>), statusCode:200)]
-    public async Task<IActionResult> GetAllAsync()
+    public async Task<IActionResult> GetAllAsync()//obtener todos los usuarios
     {
         var users = await _userService.ListAsync();
         var resources = _mapper.Map<IEnumerable<User>, IEnumerable<UserResource>>(users);
@@ -61,7 +61,7 @@ public class UsersController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetByIdAsync(int id)
+    public async Task<IActionResult> GetByIdAsync(int id)//obtener los usuarios por id
     {
         var user = await _userService.GetByIdAsync(id);
         var resource = _mapper.Map<User, UserResource>(user);
@@ -74,7 +74,7 @@ public class UsersController : ControllerBase
     [ProducesResponseType(500)]
     [SwaggerResponse(201, "The user was successfully updated")]
     [SwaggerResponse(400, "The user data is not valid")]
-    public async Task<IActionResult> UpdateAsync(int id, UpdateRequest request)
+    public async Task<IActionResult> UpdateAsync(int id, UpdateRequest request)//actualizar por id
     {
         await _userService.UpdateAsync(id, request);
         return Ok(new { message = "User updated successfully" });
